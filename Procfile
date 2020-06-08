@@ -1,1 +1,1 @@
- web: gunicorn CS.wsgi:application --pythonpath app --log-file - Url de gitingore = https://github.com/github/gitignore
+ web: gunicorn CS.wsgi:application --pythonpath app --log-file -
