@@ -31,7 +31,6 @@ class UserViewSet(viewsets.ModelViewSet):
 
 router = routers.DefaultRouter()
 router.register(r'users',UserViewSet)
-
 schema_view = get_swagger_view(title='Pastebin API')
 
 urlpatterns = [
