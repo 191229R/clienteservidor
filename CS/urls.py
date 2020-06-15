@@ -19,6 +19,7 @@ from django.contrib.auth.models import User
 from rest_framework import routers, serializers, viewsets
 from django.conf.urls import url, re_path
 from rest_framework_swagger.views import get_swagger_view
+from Login.views import CustonAuthToken
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -36,7 +37,9 @@ schema_view = get_swagger_view(title='Pastebin API')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    re_path(r'^',include(router.urls)),
     path('swagger/', schema_view),
+    re_path(r'^api/v1/login', include('Login.urls')),
+    re_path(r'^',include(router.urls)),
+    
 ]
 
