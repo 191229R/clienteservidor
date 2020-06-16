@@ -99,8 +99,7 @@ DATABASES = {
         'USER': 'nrlvgjahwpqkxy',
         'PASSWORD': 'd2c6302974ff18321e690487246153fe87840c311b6ec86f36159d2728240378',
         'HOST': 'ec2-35-172-73-125.compute-1.amazonaws.com',
-        'PORT': '5432',
-        ),
+        'PORT': '5432'
     }
 }
 
