@@ -39,6 +39,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('swagger/', schema_view),
     re_path(r'^api/v1/login', include('Login.urls')),
+    re_path(r'^api/v1/example', include('Example1.urls')),
     re_path(r'^',include(router.urls)),
     
 ]
