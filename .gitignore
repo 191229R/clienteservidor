@@ -59,9 +59,9 @@ cover/
 # Django stuff:
 *.log
 local_settings.py
-settings.ini
 db.sqlite3
 db.sqlite3-journal
+settings.ini
 
 # Flask stuff:
 instance/
