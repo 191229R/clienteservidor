@@ -23,7 +23,7 @@ wheels/
 share/python-wheels/
 *.egg-info/
 .installed.cfg
-settings.ini
+settings.ini/
 *.egg
 MANIFEST
 
