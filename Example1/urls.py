@@ -3,8 +3,10 @@ from django.urls import path, re_path
 from django.conf.urls import include
 from django.contrib.auth.models import User
 
-from Example1.views import ExampleList
+from Example1 import views
 
 urlpatterns = [
-    re_path(r'/example1/$', ExampleList.as_view()),
+    re_path(r'/example1/$', views.ExampleList.as_view()),
+    re_path(r'/example1_detail/(?P<id>\d+)/$', views.ExampleDetail.as_view()),
+    re_path(r'/example1_Put/(?P<id>\d+)/$', views.ExampleDetail.as_view()),
 ]

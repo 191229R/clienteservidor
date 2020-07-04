@@ -27,3 +27,34 @@ class ExampleList(APIView):
             serializer.save()
             datas = serializer.data
             return Response(datas)
+        else:
+            return Response("Hay datos que superan el limite o hay datos que son faltantes")
+
+class ExampleDetail(APIView):
+    def get_object(self, id):
+        try:
+            return Example1.objects.get(pk = id)
+        except Example1.DoesNotExist:
+            return 404
+
+
+    def get(self, request, id, format=None):
+        print("GET Detail")
+        example = self.get_object(id)
+        if example == 404:
+            return Response("No existen datos")
+        else:
+            serializer = Example1Serializers(example)
+            return Response(serializer.data)
+
+
+    
+    def put(self, request, id, format=None):
+        example = self.get_object(id)
+        serializer = Example1Serializers(example, data = request.data)
+        if serializer.is_valid():
+            serializer.save()
+            datas = serializer.data
+            return Response(datas)
+        else:
+            return Response(serializers.errors)
